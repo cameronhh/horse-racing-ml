@@ -10,7 +10,7 @@ from sklearn import preprocessing
 
 class BetManager:
     def __init(self):
-        print()
+        pass
 
     def implied_probability(self, betting_odds):
         return 1 / betting_odds
