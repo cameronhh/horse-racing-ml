@@ -1,3 +1,6 @@
 /data/*
 .DS_Store
 /scraping_outputs/*
+/venv/*
+__pycache__/*
+.vscode
