@@ -3,14 +3,14 @@ from betting import BetManager
 from sklearn.neural_network import MLPRegressor
 from sklearn import metrics
 import pandas as pd
-data_manager = DataManager('data/class2_master.csv', 0)
+data_manager = DataManager('data/class1_master.csv', 0)
 
 X_train, X_test, y_train, y_test = data_manager.load(train_test_split=0.3)
 original_test_data = data_manager.get_original_test_data()
 
-### MODEL ###
+### MODEL - replace with any sklearn model ###
 model = MLPRegressor(
-        hidden_layer_sizes=(100,30,10), 
+        hidden_layer_sizes=(10,5,3), 
         activation="relu",
         solver="lbfgs", 
         max_iter=400, 
@@ -35,6 +35,5 @@ print('Training Set MAE:    %f' % train_mae)
 print('Test Set MAE:        %f' % test_mae)
 
 ### BETMANAGER (requires pandas data types) ###
-
 bet_manager = BetManager()
 bet_manager.calculate_betting_outcomes(original_test_data, pd.Series(y_pred, name='predicted_margin'))
